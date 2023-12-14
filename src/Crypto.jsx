@@ -42,7 +42,7 @@ const Crypto = () => {
     <>
     <div className="flex justify-center h-full p-10 mx-auto my-auto">
 
-    { isLoading ? ( <Spinner thickness='4px' speed='0.65s' emptyColor='gray.200' color='blue.500' size='xl'/>  ) : ( 
+    { isLoading ? (<Spinner thickness='4px' speed='0.65s' emptyColor='gray.200' color='blue.500' size='xl'/>) : ( 
         <TableContainer className="bg-white text-black rounded">
         <Table size="md">
           <Thead>
