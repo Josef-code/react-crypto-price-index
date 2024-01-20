@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import {
   Table,
@@ -30,6 +30,16 @@ const Crypto = () => {
 
         setData(responseData);
         setisLoading(false);
+
+        //get the price from the table
+        const price = document.querySelector('.price');
+        const priceData = price.textContent;
+        // const currencyFormatted = priceData.toLocaleString('en-US', {
+        //   style: 'currency',
+        //   currency: 'USD',
+        // });
+
+        console.log(priceData);
       })
       .catch((error) => {
         //Handle any errors here
@@ -60,7 +70,7 @@ const Crypto = () => {
                       <Td>{crypto.name}</Td>
                       <Td>{crypto.rank}</Td>
                       <Td>{crypto.symbol}</Td>
-                      <Td>{crypto.priceUsd}</Td>
+                      <Td className="price">{crypto.priceUsd}</Td>
                   </Tr>
                   ))
               } 
